@@ -11,7 +11,7 @@ protocol FactWeatherRouterProtocol: AnyObject {
     
 }
 
-final class FactWeatherRouter: FactWeatherRouterProtocol{
+class FactWeatherRouter: FactWeatherRouterProtocol{
     
     weak var presenter: FactWeatherPresenterProtocol?
 }

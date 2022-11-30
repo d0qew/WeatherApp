@@ -7,10 +7,11 @@
 
 import UIKit
 
-final class FactWeatherAssembly{
+class FactWeatherAssembly{
    
     static func configure() -> UIViewController {
-        let interactor = FactWeatherInteractor()
+        let locationService = LocationService()
+        let interactor = FactWeatherInteractor(locationService: locationService)
         let router = FactWeatherRouter()
         let presenter = FactWeatherPresenter(router: router, interactor: interactor)
         let view = FactWeatherViewController()
