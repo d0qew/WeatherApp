@@ -8,7 +8,7 @@
 import Foundation
 
 struct Weather: Decodable {
-    let now_dt: String
+    let now: Date
     let geo_object: GeoObject
     let fact: FactWeather
     let forecasts: [WeatherWeek]

@@ -29,6 +29,7 @@ extension FactWeatherInteractor {
         DispatchQueue.global().async {
             self.locationService?.start(completion: { location in
                 WeatherService.shared.getWeather(latitude: location.coordinate.latitude, longtitude: location.coordinate.longitude) { weather in
+                    
                     self.presenter?.didLoadWeather(weather: weather)
                 }
             })

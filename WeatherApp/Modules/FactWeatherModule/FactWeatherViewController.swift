@@ -9,36 +9,67 @@ import UIKit
 import CoreLocation
 
 
-
 protocol FactWeatherViewControllerProtocol: AnyObject {
-    func showWeather(weather: Weather)
+    func showWeather(weather: Weather, hoursForCell: WeatherHoursStorage)
     func viewDidLoad()
 }
 
 class FactWeatherViewController: UIViewController {
     var presenter: FactWeatherPresenter?
     
+    var formatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMMM"
+        return formatter
+    }
+    var colorBackground = UIColor()
     var cityLabel = UILabel()
     var dateLabel = UILabel()
+    var factWeatherView = FactWeatherView()
+    var windSpeedView = FactWeatherUnderView()
+    var sunriseView = FactWeatherUnderView()
+    var sunsetView = FactWeatherUnderView()
+    var hoursCollectionView = HoursCollectionView()
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoaded()
-        setup()
     }
 }
 
+
+
+//  MARK: EXTINTION
 extension FactWeatherViewController: FactWeatherViewControllerProtocol {
     
-    func showWeather(weather: Weather) {
-        print(weather)
+    func showWeather(weather: Weather, hoursForCell: WeatherHoursStorage) {
+        DispatchQueue.main.async {
+            if weather.fact.daytime == "d" {
+                self.view.backgroundColor = UIColor(red: 138/255, green: 138/255, blue: 226/255, alpha: 1)
+            }else {
+                self.view.backgroundColor = UIColor(red: 138/255, green: 43/255, blue: 226/255, alpha: 1)
+            }
+            
+            self.cityLabel.text = weather.geo_object.locality.name
+            self.dateLabel.text = self.formatter.string(from: weather.now)
+            self.factWeatherView.temp = weather.fact.temp
+            self.factWeatherView.image = weather.fact.condition
+            self.windSpeedView.text = String(weather.fact.wind_speed) + "км/ч"
+            self.sunriseView.text = weather.forecasts.first?.sunrise
+            self.sunsetView.text = weather.forecasts.first?.sunset
+            self.hoursCollectionView.set(hoursForCell.array)
+            
+            
+            self.updateDate()
+            self.setup()
+            
+        }
     }
 
     func setup() {
-        view.backgroundColor = .blue
-        
         view.addSubview(cityLabel)
         cityLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(60)
@@ -51,17 +82,64 @@ extension FactWeatherViewController: FactWeatherViewControllerProtocol {
             make.top.equalTo(cityLabel).inset(60)
             make.centerX.equalToSuperview()
         }
+        view.addSubview(factWeatherView)
+        factWeatherView.snp.makeConstraints { make in
+            make.top.equalTo(dateLabel).inset(20)
+            make.centerX.equalToSuperview()
+            make.size.equalTo(360)
+        }
+        view.addSubview(windSpeedView)
+        windSpeedView.snp.makeConstraints { make in
+            make.top.equalTo(factWeatherView).inset(360)
+            make.left.equalToSuperview().inset((StructScreenSize().screenWidth - 330) / 4)
+            make.size.equalTo(110)
+        }
+        
+        
+        view.addSubview(sunriseView)
+        sunriseView.snp.makeConstraints { make in
+            make.top.equalTo(factWeatherView).inset(360)
+            make.left.equalTo(windSpeedView).inset(((StructScreenSize().screenWidth - 330) / 4) + 110 )
+            make.size.equalTo(110)
+        }
+
+        view.addSubview(sunsetView)
+        sunsetView.snp.makeConstraints { make in
+            make.top.equalTo(factWeatherView).inset(360)
+            make.left.equalTo(sunriseView).inset(((StructScreenSize().screenWidth - 330) / 4) + 110 )
+            make.size.equalTo(110)
+        }
+        
+        view.addSubview(hoursCollectionView)
+        hoursCollectionView.snp.makeConstraints { make in
+            make.height.equalTo(200)
+            make.bottom.equalToSuperview().inset(20)
+            make.left.equalToSuperview().inset((StructScreenSize().screenWidth - 330) / 4)
+            make.right.equalToSuperview().inset((StructScreenSize().screenWidth - 330) / 4)
+        }
     }
     
     func updateDate() {
-        cityLabel.text = ""
+        
         cityLabel.font = UIFont(name: "Menlo-Bold", size: 20)
         cityLabel.textAlignment = .center
         cityLabel.textColor = .white
         
-        dateLabel.text = "Ноябрь 25, 2022"
+        factWeatherView.setup()
+        
         dateLabel.font = UIFont(name: "Menlo", size: 20)
         cityLabel.textAlignment = .center
         dateLabel.textColor = .white
+        
+        windSpeedView.title = "Ветер"
+        windSpeedView.setup()
+
+        sunriseView.title = "Восход"
+        sunriseView.setup()
+
+        sunsetView.title = "Закат"
+        sunsetView.setup()
+
+        hoursCollectionView.reloadData()
     }
 }

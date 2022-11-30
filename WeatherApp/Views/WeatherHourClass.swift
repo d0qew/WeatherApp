@@ -115,5 +115,5 @@ class WeatherHoursStorage {
     }
 }
 
-var hoursStorage = WeatherHoursStorage()
+
 

@@ -27,10 +27,17 @@ class FactWeatherPresenter {
 
 extension FactWeatherPresenter: FactWeatherPresenterProtocol {
     func didLoadWeather(weather: Weather) {
-        view?.showWeather(weather: weather)
+        let hoursArray = WeatherHoursStorage()
+        for i in 0...(weather.forecasts.first?.hours.count)! - 1 {
+            hoursArray.addNewElement(WeatherHour(hour: (weather.forecasts.first?.hours[i].hour)!,
+                                                   temp: (weather.forecasts.first?.hours[i].temp)!,
+                                                   condition: (weather.forecasts.first?.hours[i].condition)!))
+        }
+        view?.showWeather(weather: weather, hoursForCell: hoursArray)
     }
     
     func viewDidLoaded() {
         interactor.loadLocationInfo()
     }
+    
 }
