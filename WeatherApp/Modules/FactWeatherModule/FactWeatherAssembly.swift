@@ -19,7 +19,7 @@ class FactWeatherAssembly{
         view.presenter = presenter
         presenter.view = view
         interactor.presenter = presenter
-        router.presenter = presenter
+        router.view = view
         
         return view
     }

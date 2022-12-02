@@ -13,6 +13,6 @@ protocol FactWeatherRouterProtocol: AnyObject {
 
 class FactWeatherRouter: FactWeatherRouterProtocol{
     
-    weak var presenter: FactWeatherPresenterProtocol?
+    weak var view: FactWeatherViewControllerProtocol?
 }
 
