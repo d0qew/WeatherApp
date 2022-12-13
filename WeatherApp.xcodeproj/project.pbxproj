@@ -29,6 +29,7 @@
 		63F749932937F16E002AC8FC /* FactWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F749922937F16E002AC8FC /* FactWeatherView.swift */; };
 		63F749952937F3FB002AC8FC /* FactWeatherUnderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F749942937F3FB002AC8FC /* FactWeatherUnderView.swift */; };
 		63F7499A2937FAD1002AC8FC /* StructScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F749992937FAD1002AC8FC /* StructScreenSize.swift */; };
+		63F7499C2948CA54002AC8FC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F7499B2948CA54002AC8FC /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		63F749922937F16E002AC8FC /* FactWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactWeatherView.swift; sourceTree = "<group>"; };
 		63F749942937F3FB002AC8FC /* FactWeatherUnderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactWeatherUnderView.swift; sourceTree = "<group>"; };
 		63F749992937FAD1002AC8FC /* StructScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructScreenSize.swift; sourceTree = "<group>"; };
+		63F7499B2948CA54002AC8FC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 				63F749922937F16E002AC8FC /* FactWeatherView.swift */,
 				63F749942937F3FB002AC8FC /* FactWeatherUnderView.swift */,
 				63F749992937FAD1002AC8FC /* StructScreenSize.swift */,
+				63F7499B2948CA54002AC8FC /* MainTabBarController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				63960D9F2934D9D700C76B89 /* FactWeatherAssembly.swift in Sources */,
 				63960DA02934D9D700C76B89 /* FactWeatherInteractor.swift in Sources */,
 				6391951E293637EB003465C4 /* WeatherHourClass.swift in Sources */,
+				63F7499C2948CA54002AC8FC /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

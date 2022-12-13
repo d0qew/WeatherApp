@@ -90,7 +90,7 @@ extension FactWeatherViewController: FactWeatherViewControllerProtocol {
         }
         view.addSubview(windSpeedView)
         windSpeedView.snp.makeConstraints { make in
-            make.top.equalTo(factWeatherView).inset(360)
+            make.top.equalTo(factWeatherView).inset(300)
             make.left.equalToSuperview().inset((StructScreenSize().screenWidth - 330) / 4)
             make.size.equalTo(110)
         }
@@ -98,14 +98,14 @@ extension FactWeatherViewController: FactWeatherViewControllerProtocol {
         
         view.addSubview(sunriseView)
         sunriseView.snp.makeConstraints { make in
-            make.top.equalTo(factWeatherView).inset(360)
+            make.top.equalTo(factWeatherView).inset(300)
             make.left.equalTo(windSpeedView).inset(((StructScreenSize().screenWidth - 330) / 4) + 110 )
             make.size.equalTo(110)
         }
 
         view.addSubview(sunsetView)
         sunsetView.snp.makeConstraints { make in
-            make.top.equalTo(factWeatherView).inset(360)
+            make.top.equalTo(factWeatherView).inset(300)
             make.left.equalTo(sunriseView).inset(((StructScreenSize().screenWidth - 330) / 4) + 110 )
             make.size.equalTo(110)
         }
@@ -113,7 +113,7 @@ extension FactWeatherViewController: FactWeatherViewControllerProtocol {
         view.addSubview(hoursCollectionView)
         hoursCollectionView.snp.makeConstraints { make in
             make.height.equalTo(200)
-            make.bottom.equalToSuperview().inset(20)
+            make.top.equalTo(sunsetView).inset(120)
             make.left.equalToSuperview().inset((StructScreenSize().screenWidth - 330) / 4)
             make.right.equalToSuperview().inset((StructScreenSize().screenWidth - 330) / 4)
         }
@@ -143,3 +143,4 @@ extension FactWeatherViewController: FactWeatherViewControllerProtocol {
         hoursCollectionView.reloadData()
     }
 }
+
