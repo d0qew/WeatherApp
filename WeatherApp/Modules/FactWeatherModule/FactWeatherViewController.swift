@@ -42,7 +42,7 @@ class FactWeatherViewController: UIViewController {
 
 
 
-//  MARK: EXTINTION
+//  MARK: EXTENSION
 extension FactWeatherViewController: FactWeatherViewControllerProtocol {
     
     func showWeather(weather: Weather, hoursForCell: WeatherHoursStorage) {

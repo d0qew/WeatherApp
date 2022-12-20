@@ -14,9 +14,9 @@ protocol FactWeatherInteractorProtocol: AnyObject{
 }
 
 class FactWeatherInteractor: FactWeatherInteractorProtocol {
-    let locationService: LocationService?
-    
     weak var presenter: FactWeatherPresenterProtocol?
+    
+    let locationService: LocationService?
     init(locationService: LocationService?) {
         self.locationService = locationService
     }
