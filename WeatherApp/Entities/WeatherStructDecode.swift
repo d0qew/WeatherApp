@@ -11,7 +11,7 @@ struct Weather: Decodable {
     let now: Date
     let geo_object: GeoObject
     let fact: FactWeather
-    let forecasts: [WeatherWeek]
+    let forecasts: [WeatherDay]
 }
 
 struct GeoObject: Decodable {
@@ -30,11 +30,22 @@ struct FactWeather: Decodable{
     let daytime: String
 }
 
-struct WeatherWeek: Decodable {
-    let date: String
+struct WeatherDay: Decodable {
+    let date_ts: Date
     let sunrise: String
     let sunset: String
+    let parts: Part
     let hours: [WeatherOnHours]
+}
+
+struct Part: Decodable {
+    let day: Day
+}
+
+struct Day: Decodable {
+    let temp_avg: Int
+    let wind_speed: Double
+    let condition: String
 }
 
 struct WeatherOnHours: Decodable {
@@ -42,5 +53,3 @@ struct WeatherOnHours: Decodable {
     let temp: Int
     let condition: String
 }
-
-

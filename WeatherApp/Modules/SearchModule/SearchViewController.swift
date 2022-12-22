@@ -12,7 +12,7 @@ protocol SearchViewControllerProtocol: AnyObject {
 }
 
 class SearchViewController: UIViewController {
-    var presenter: SearchPresenter?
+    var presenter: SearchPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()

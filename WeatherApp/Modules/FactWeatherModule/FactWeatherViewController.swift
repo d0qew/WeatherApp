@@ -15,13 +15,14 @@ protocol FactWeatherViewControllerProtocol: AnyObject {
 }
 
 class FactWeatherViewController: UIViewController {
-    var presenter: FactWeatherPresenter?
+    var presenter: FactWeatherPresenterProtocol?
     
     var formatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "d MMMM"
         return formatter
     }
+    
     var colorBackground = UIColor()
     var cityLabel = UILabel()
     var dateLabel = UILabel()
@@ -57,7 +58,7 @@ extension FactWeatherViewController: FactWeatherViewControllerProtocol {
             self.dateLabel.text = self.formatter.string(from: weather.now)
             self.factWeatherView.temp = weather.fact.temp
             self.factWeatherView.image = weather.fact.condition
-            self.windSpeedView.text = String(weather.fact.wind_speed) + "км/ч"
+            self.windSpeedView.text = String(weather.fact.wind_speed) + "м/c"
             self.sunriseView.text = weather.forecasts.first?.sunrise
             self.sunsetView.text = weather.forecasts.first?.sunset
             self.hoursCollectionView.set(hoursForCell.array)
@@ -113,7 +114,7 @@ extension FactWeatherViewController: FactWeatherViewControllerProtocol {
         view.addSubview(hoursCollectionView)
         hoursCollectionView.snp.makeConstraints { make in
             make.height.equalTo(200)
-            make.top.equalTo(sunsetView).inset(120)
+            make.top.equalTo(sunsetView).inset(100)
             make.left.equalToSuperview().inset((StructScreenSize().screenWidth - 330) / 4)
             make.right.equalToSuperview().inset((StructScreenSize().screenWidth - 330) / 4)
         }

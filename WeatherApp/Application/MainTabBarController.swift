@@ -17,9 +17,9 @@ class MainTabBarController: UITabBarController {
     
     private func generateTabBar() {
         viewControllers = [
-            generateVC(viewController: FactWeatherAssembly.configure(), title: "Home", image: UIImage(systemName: "house.fill")),
+            generateVC(viewController: FactWeatherAssembly.configure(), title: "Location", image: UIImage(systemName: "location")),
+            generateVC(viewController: WeekWeatherAssembly.configure(), title: "Week", image: UIImage(systemName:"7.circle")),
             generateVC(viewController: SearchAssembly.configure(), title: "Search", image: UIImage(systemName: "magnifyingglass"))
-//            generateVC(viewController: <#T##UIViewController#>, title: "Likes", image: <#T##UIImage?#>)
         ]
     }
     

@@ -11,5 +11,5 @@ protocol SearchInteractorProtocol: AnyObject {
 }
 
 class SearchInteractor: SearchInteractorProtocol {
-    weak var presenter: SearchPresenter?
+    weak var presenter: SearchPresenterProtocol?
 }
