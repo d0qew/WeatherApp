@@ -26,6 +26,10 @@ class FactWeatherPresenter {
 }
 
 extension FactWeatherPresenter: FactWeatherPresenterProtocol {
+    func viewDidLoaded() {
+        interactor.loadLocationInfo()
+    }
+    
     func didLoadWeather(weather: Weather) {
         let hoursArray = WeatherHoursStorage()
         for i in 0...(weather.forecasts.first?.hours.count)! - 1 {
@@ -35,9 +39,4 @@ extension FactWeatherPresenter: FactWeatherPresenterProtocol {
         }
         view?.showWeather(weather: weather, hoursForCell: hoursArray)
     }
-    
-    func viewDidLoaded() {
-        interactor.loadLocationInfo()
-    }
-    
 }

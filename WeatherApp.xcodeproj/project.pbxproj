@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		636E7F332955DD930065780E /* WeakWeatherCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E7F322955DD930065780E /* WeakWeatherCollectionView.swift */; };
+		636E7F352955DDCE0065780E /* WeekWeatherCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E7F342955DDCD0065780E /* WeekWeatherCollectionCell.swift */; };
+		636E7F372955DE6C0065780E /* WeatherDayClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E7F362955DE6C0065780E /* WeatherDayClass.swift */; };
 		6391951A29363710003465C4 /* HoursCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391951929363710003465C4 /* HoursCollectionView.swift */; };
 		6391951C2936375D003465C4 /* HoursCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391951B2936375D003465C4 /* HoursCollectionCell.swift */; };
 		6391951E293637EB003465C4 /* WeatherHourClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391951D293637EB003465C4 /* WeatherHourClass.swift */; };
@@ -60,6 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		636E7F322955DD930065780E /* WeakWeatherCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakWeatherCollectionView.swift; sourceTree = "<group>"; };
+		636E7F342955DDCD0065780E /* WeekWeatherCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherCollectionCell.swift; sourceTree = "<group>"; };
+		636E7F362955DE6C0065780E /* WeatherDayClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDayClass.swift; sourceTree = "<group>"; };
 		6391951929363710003465C4 /* HoursCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursCollectionView.swift; sourceTree = "<group>"; };
 		6391951B2936375D003465C4 /* HoursCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursCollectionCell.swift; sourceTree = "<group>"; };
 		6391951D293637EB003465C4 /* WeatherHourClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHourClass.swift; sourceTree = "<group>"; };
@@ -127,8 +133,18 @@
 		636E7F302954D2EC0065780E /* WeekWeatherViews */ = {
 			isa = PBXGroup;
 			children = (
+				636E7F312955DD440065780E /* WeakWeatherCollectionView */,
 			);
 			path = WeekWeatherViews;
+			sourceTree = "<group>";
+		};
+		636E7F312955DD440065780E /* WeakWeatherCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				636E7F322955DD930065780E /* WeakWeatherCollectionView.swift */,
+				636E7F342955DDCD0065780E /* WeekWeatherCollectionCell.swift */,
+			);
+			path = WeakWeatherCollectionView;
 			sourceTree = "<group>";
 		};
 		6391951629363485003465C4 /* Services */ = {
@@ -145,6 +161,7 @@
 				63F749992937FAD1002AC8FC /* StructScreenSize.swift */,
 				63960DAC2935208500C76B89 /* WeatherStructDecode.swift */,
 				6391951D293637EB003465C4 /* WeatherHourClass.swift */,
+				636E7F362955DE6C0065780E /* WeatherDayClass.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -447,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6391952529364C08003465C4 /* LocationService.swift in Sources */,
+				636E7F332955DD930065780E /* WeakWeatherCollectionView.swift in Sources */,
 				63F7499A2937FAD1002AC8FC /* StructScreenSize.swift in Sources */,
 				63F749A329520785002AC8FC /* SearchPresenter.swift in Sources */,
 				6391951A29363710003465C4 /* HoursCollectionView.swift in Sources */,
@@ -463,7 +481,9 @@
 				6391951C2936375D003465C4 /* HoursCollectionCell.swift in Sources */,
 				63960D9C2934D9D700C76B89 /* FactWeatherPresenter.swift in Sources */,
 				63960D9E2934D9D700C76B89 /* FactWeatherViewController.swift in Sources */,
+				636E7F372955DE6C0065780E /* WeatherDayClass.swift in Sources */,
 				63960D9F2934D9D700C76B89 /* FactWeatherAssembly.swift in Sources */,
+				636E7F352955DDCE0065780E /* WeekWeatherCollectionCell.swift in Sources */,
 				63960DA02934D9D700C76B89 /* FactWeatherInteractor.swift in Sources */,
 				63F749A629520785002AC8FC /* SearchAssembly.swift in Sources */,
 				63F749A729520785002AC8FC /* SearchInteractor.swift in Sources */,

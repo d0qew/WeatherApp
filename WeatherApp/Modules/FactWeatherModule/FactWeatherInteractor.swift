@@ -9,11 +9,10 @@ import Foundation
 import CoreLocation
 
 protocol FactWeatherInteractorProtocol: AnyObject{
-    
     func loadLocationInfo()
 }
 
-class FactWeatherInteractor: FactWeatherInteractorProtocol {
+class FactWeatherInteractor {
     weak var presenter: FactWeatherPresenterProtocol?
     
     let locationService: LocationService?
@@ -22,7 +21,7 @@ class FactWeatherInteractor: FactWeatherInteractorProtocol {
     }
 }
 
-extension FactWeatherInteractor {
+extension FactWeatherInteractor: FactWeatherInteractorProtocol {
     
     func loadLocationInfo() {
         locationService?.requestPerrmission()

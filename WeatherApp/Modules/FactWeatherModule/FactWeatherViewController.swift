@@ -23,7 +23,7 @@ class FactWeatherViewController: UIViewController {
         return formatter
     }
     
-    var colorBackground = UIColor()
+//    var colorBackground = UIColor()
     var cityLabel = UILabel()
     var dateLabel = UILabel()
     var factWeatherView = FactWeatherView()
@@ -32,11 +32,9 @@ class FactWeatherViewController: UIViewController {
     var sunsetView = FactWeatherUnderView()
     var hoursCollectionView = HoursCollectionView()
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 138/255, green: 43/255, blue: 226/255, alpha: 1)
         presenter?.viewDidLoaded()
     }
 }
@@ -48,21 +46,14 @@ extension FactWeatherViewController: FactWeatherViewControllerProtocol {
     
     func showWeather(weather: Weather, hoursForCell: WeatherHoursStorage) {
         DispatchQueue.main.async {
-            if weather.fact.daytime == "d" {
-                self.view.backgroundColor = UIColor(red: 138/255, green: 138/255, blue: 226/255, alpha: 1)
-            }else {
-                self.view.backgroundColor = UIColor(red: 138/255, green: 43/255, blue: 226/255, alpha: 1)
-            }
-            
             self.cityLabel.text = weather.geo_object.locality.name
             self.dateLabel.text = self.formatter.string(from: weather.now)
             self.factWeatherView.temp = weather.fact.temp
             self.factWeatherView.image = weather.fact.condition
-            self.windSpeedView.text = String(weather.fact.wind_speed) + "м/c"
+            self.windSpeedView.text = String(weather.fact.wind_speed) + " м/c"
             self.sunriseView.text = weather.forecasts.first?.sunrise
             self.sunsetView.text = weather.forecasts.first?.sunset
             self.hoursCollectionView.set(hoursForCell.array)
-            
             
             self.updateDate()
             self.setup()

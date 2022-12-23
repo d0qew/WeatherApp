@@ -10,7 +10,8 @@ import UIKit
 class WeekWeatherAssembly {
     
     static func configure() -> UIViewController {
-        let interactor = WeekWeatherInteractor()
+        let locationService = LocationService()
+        let interactor = WeekWeatherInteractor(locationService: locationService)
         let router = WeekWeatherRouter()
         let presenter = WeekWeatherPresenter(router: router, interactor: interactor)
         let view = WeekWeatherViewController()
