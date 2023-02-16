@@ -25,6 +25,7 @@ class FactWeatherPresenter {
     }
 }
 
+//  MARK: EXTENSION
 extension FactWeatherPresenter: FactWeatherPresenterProtocol {
     func viewDidLoaded() {
         interactor.loadLocationInfo()

@@ -22,3 +22,5 @@ class SearchPresenter: SearchPresenterProtocol {
         self.interactor = interactor
     }
 }
+
+//  MARK: EXTENSION

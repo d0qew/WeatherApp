@@ -21,13 +21,14 @@ class FactWeatherInteractor {
     }
 }
 
+//  MARK: EXTENSION
 extension FactWeatherInteractor: FactWeatherInteractorProtocol {
     
     func loadLocationInfo() {
-        locationService?.requestPerrmission()
+        locationService?.requestPermission()
         DispatchQueue.global().async {
             self.locationService?.start(completion: { location in
-                WeatherService.shared.getWeather(latitude: location.coordinate.latitude, longtitude: location.coordinate.longitude) { weather in
+                WeatherService.shared.getWeather(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude) { weather in
                     
                     self.presenter?.didLoadWeather(weather: weather)
                 }

@@ -13,16 +13,16 @@ final class LocationService: NSObject {
     var completion: ((CLLocation) -> Void)?
     override init() {
         super.init()
-        configurate()
+        configure()
     }
     
-    private func configurate() {
+    private func configure() {
         locationManager.delegate = self
         locationManager.pausesLocationUpdatesAutomatically = false
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
     }
     
-    func requestPerrmission() {
+    func requestPermission() {
         locationManager.requestWhenInUseAuthorization()
     }
     

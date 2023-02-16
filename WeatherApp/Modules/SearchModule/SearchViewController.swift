@@ -21,7 +21,6 @@ class SearchViewController: UIViewController {
 }
 
 //  MARK: EXTENSION
-
 extension SearchViewController: SearchViewControllerProtocol {
     
 }

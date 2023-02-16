@@ -30,7 +30,6 @@ class WeekWeatherPresenter {
 }
 
 //  MARK: EXTENSION
-
 extension WeekWeatherPresenter: WeekWeatherPresenterProtocol {
     func viewDidLoaded() {
         interactor.loadLocationInfo()

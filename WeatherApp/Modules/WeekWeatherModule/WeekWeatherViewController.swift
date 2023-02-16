@@ -25,7 +25,6 @@ class WeekWeatherViewController: UIViewController {
 }
 
 //  MARK: EXTENSION
-
 extension WeekWeatherViewController: WeekWeatherViewControllerProtocol {
     
     func showWeather(weather: Weather, WeekForCell: WeatherDaysStorage) {

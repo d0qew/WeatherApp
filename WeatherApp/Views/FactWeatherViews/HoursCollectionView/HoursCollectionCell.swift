@@ -11,7 +11,7 @@ import SnapKit
 class HoursCollectionViewCell: UICollectionViewCell {
     static let reuseId = "HoursCollectionViewCell"
     
-    var title: UILabel = {
+    var title: UILabel = { 
         let textLabel = UILabel()
         textLabel.textColor = UIColor.white
         textLabel.font = UIFont(name: "Menlo", size: 20)
